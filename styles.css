@@ -1,0 +1,272 @@
+/* Base Styles */
+html, body {
+    font-family: 'Poppins', sans-serif; /* Apply Poppins font */
+    background: linear-gradient(135deg, #E64833,#244855, #FBE9D0); /* New gradient colors */
+    background-size: 200% 200%; /* For animation effect */
+    animation: gradientAnimation 15s ease infinite; /* Animation for background */
+    color: #333333; /* Updated text color */
+    overflow-x: hidden; /* This hides the horizontal (bottom) scrollbar */
+    overflow-y: auto;   /* This keeps the vertical (side) scrollbar visible */
+}
+
+
+@keyframes gradientAnimation {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+body {
+    background-color: #FBE9D0; /* New body background */
+}
+
+h2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+header {
+    background: linear-gradient(135deg, #244855, #874F41); /* New header gradient */
+    color: #ffffff; /* Updated header text color */
+    padding: 20px; /* Added padding for better spacing */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5); /* Softer shadow for depth */
+    border-bottom: 2px solid #E64833; /* Updated border color */
+    text-align: center;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex; /* Flexbox for horizontal alignment */
+    justify-content: space-around; /* Space out navigation items */
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+    list-style: none; /* Remove default list styling */
+}
+
+nav ul li a {
+    color: #E64833; /* New link color */
+    text-decoration: none; /* Remove underline */
+    padding: 10px 15px; /* Added padding for clickable area */
+    transition: color 0.3s ease; /* Smooth transition for hover effect */
+}
+
+nav ul li a:hover {
+    color: #333333; /* New hover color */
+    text-shadow: 0 0 5px #244855; /* Updated glow effect color */
+}
+
+
+/* Project Showcase Styles */
+#projects {
+    position: relative; /* Position relative for stacking context */
+    z-index: 5; /* Ensure it appears above other elements */
+    width: 100%; /* Full width */
+    min-height: 80vh; /* Set a minimum height for the section */
+    padding-top: 2rem; /* Space above the section */
+    display: flex; /* Use flexbox for layout */
+    flex-direction: column; /* Stack items vertically */
+    align-items: center; /* Center align items */
+    justify-content: flex-start; /* Align items to the start */
+    gap: 7rem; /* Space between project items */
+    margin: 0 auto; /* Center the section horizontally */
+    max-width: 85%; /* Set a maximum width for the section */
+}
+
+
+/* Project Content Styles */
+.project-content {
+    display: flex; /* Use flexbox for horizontal layout */
+    align-items: center; /* Center align items vertically */
+    width: 95%; /* Increase width for better visibility */
+    opacity: 1; /* Always visible */
+    margin: 20px 0; /* Add margin for spacing */
+}
+
+
+.project-image {
+    flex: 1; /* Allow image to take up space */
+    margin-right: 20px; /* Space between image and text */
+}
+
+.project-text {
+    flex: 2; /* Allow text to take up more space */
+}
+
+
+/* Project Styles */
+.project {
+    display: flex;
+    flex-direction: column; /* Stack image and text vertically */
+    align-items: center; /* Center align items */
+    background: #FBE9D0; /* New project background */
+    margin: 20px 0; /* Adjust margin for spacing */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5); /* Softer shadow */
+    width: 100%; /* Full width for project items */
+    opacity: 1; /* Always visible */
+    transition: transform 0.3s ease; /* Smooth transition for scaling */
+}
+
+
+.project:hover {
+    transform: scale(1.02); /* Increased scale on hover */
+}
+
+.project img {
+    height: 451px;
+    border-radius: 8px;
+}
+
+footer {
+    text-align: center;
+    padding: 15px 0;
+    background: #FBE9D0; /* New footer background */
+    color: #333333; /* Updated footer text color */
+}
+
+.popup {
+    position: absolute;
+    background: rgba(34, 34, 34, 0.95); /* Dark background for popup */
+    color: #e0e0e0; /* Light text for readability */
+    padding: 10px;
+    border-radius: 5px;
+    display: none; /* Hidden by default */
+    z-index: 10;
+}
+
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column; /* Stack navigation items vertically on smaller screens */
+    }
+
+
+    .project {
+        width: 90%; /* Make project section take more width */
+        margin: 10px auto; /* Center the project section */
+    }
+
+
+    .project img {
+        max-width: 100%; /* Ensure images are responsive */
+        height: auto; /* Maintain aspect ratio */
+    }
+}
+
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 1.5em; /* Adjust header size for smaller screens */
+    }
+
+
+    nav ul li {
+        margin: 5px 0; /* Reduce margin for navigation items */
+    }
+
+
+    footer {
+        font-size: 0.8em; /* Adjust footer font size */
+    }
+}
+
+#contact {
+    background: #FBE9D0; /* New contact section background */
+    padding: 20px;
+    border-radius: 8px;
+    margin: 20px 0;
+    justify-content: center;
+    text-align: center; /* Center all text */
+}
+
+#contact > p {
+    color: #e0e0e0;
+    display: flex;
+    justify-content: center;
+}
+
+#contact form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#contact input, #contact textarea {
+    width: 80%; /* Responsive width */
+    margin: 10px 0;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background: #FBE9D0; /* New input background */
+    color: #333333; /* Updated input text color */
+}
+
+#contact button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background: #244855; /* New button background */
+    color: #ffffff; /* Updated button text color */
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+#contact button:hover {
+    background: #874F41; /* New button hover color */
+}
+
+
+/* New styles for About Me section */
+#about {
+    display: flex;
+    flex-direction: column; /* Stack the title and container vertically */
+    align-items: center; /* Center the title and container */
+    padding: 20px; /* Add padding for spacing on the sides */
+    background: #E64833; /* New About Me section background */
+    border-radius: 15px; /* Rounded corners for the About section */
+    margin: 40px auto; /* Center the section with auto margins */
+    max-width: 80%; /* Set a maximum width */
+    animation: slideIn 1s ease forwards; /* Apply the slide-in animation */
+}
+
+
+.about-container {
+    max-width: 945px;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    align-items: center;
+    margin: 20px 0;
+    gap: 10rem;
+}
+
+.about-image img {
+    max-width: auto; /* Ensure image is responsive */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 8px; /* Rounded corners for images */
+    max-height: 26rem; /* Set a maximum height for the image */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for hover effects */
+}
+
+.contact-links img {
+    width: 30px; /* Adjust size as needed */
+    margin: 0 10px; /* Space between icons */
+    vertical-align: middle; /* Align icons vertically */
+}
+
+@keyframes slideIn {
+    0% {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
