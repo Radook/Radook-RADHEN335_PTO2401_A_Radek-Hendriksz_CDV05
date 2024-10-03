@@ -1,37 +1,31 @@
 /* Base Styles */
 html, body {
-    font-family: 'Poppins', sans-serif; /* Apply Poppins font */
-    background: linear-gradient(135deg, #E64833,#244855, #FBE9D0); /* New gradient colors */
+    color: #D1D1D1; /* Updated text color for better readability */
+    background: linear-gradient(135deg, #001F3F, #FF4136, #001F3F); /* New gradient colors */
     background-size: 200% 200%; /* For animation effect */
     animation: gradientAnimation 15s ease infinite; /* Animation for background */
-    color: #333333; /* Updated text color */
     overflow-x: hidden; /* This hides the horizontal (bottom) scrollbar */
     overflow-y: auto;   /* This keeps the vertical (side) scrollbar visible */
 }
 
-
-@keyframes gradientAnimation {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
-}
-
 body {
-    background-color: #FBE9D0; /* New body background */
+    background-color: #0A0A0A; /* Updated body background to dark */
 }
 
 h2 {
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-bottom: 0; /* Added margin to lower the heading */
+    color: #D1D1D1; /* Updated heading color */
 }
 
 header {
-    background: linear-gradient(135deg, #244855, #874F41); /* New header gradient */
-    color: #ffffff; /* Updated header text color */
+    background: linear-gradient(135deg, #001F3F, #FF4136); /* Updated header gradient */
+    color: #FFFFFF; /* Updated header text color */
     padding: 20px; /* Added padding for better spacing */
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5); /* Softer shadow for depth */
-    border-bottom: 2px solid #E64833; /* Updated border color */
+    border-bottom: 2px solid #FF4136; /* Updated border color */
     text-align: center;
 }
 
@@ -49,34 +43,111 @@ nav ul li {
 }
 
 nav ul li a {
-    color: #E64833; /* New link color */
+    color: #FF4136; /* Updated link color to vibrant red */
     text-decoration: none; /* Remove underline */
     padding: 10px 15px; /* Added padding for clickable area */
     transition: color 0.3s ease; /* Smooth transition for hover effect */
 }
 
 nav ul li a:hover {
-    color: #333333; /* New hover color */
-    text-shadow: 0 0 5px #244855; /* Updated glow effect color */
+    color: #FF6F61; /* Updated hover color to soft red */
+    text-shadow: 0 0 5px #FFB3B3; /* Glow effect color */
 }
 
+/* New styles for About Me section */
+#about {
+    display: flex;
+    flex-direction: column; /* Stack the title and container vertically */
+    align-items: center; /* Center the title and container */
+    padding: 20px; /* Add padding for spacing on the sides */
+    background: linear-gradient(135deg, #FF4136, #001F3F); /* Update to use palette colors */
+    border-radius: 15px; /* Rounded corners for the About section */
+    margin: 40px auto; /* Center the section with auto margins */
+    margin-top: 8rem;
+    max-width: 80%; /* Set a maximum width */
+    animation: slideIn 1s ease forwards; /* Apply the slide-in animation */
+    margin-bottom: 18rem; /* Added bottom margin for spacing */
+}
+
+.about-content > .p1 {
+    background-color: #0A0A0A; /* Updated to dark background */
+    padding: 15px; /* Optional: Add padding for better spacing */
+}
+
+.about-container {
+    max-width: 945px;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    align-items: center;
+    margin: 20px 0;
+    gap: 10rem;
+}
+
+.about-image img {
+    max-width: auto; /* Ensure image is responsive */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 8px; /* Rounded corners for images */
+    max-height: 26rem; /* Set a maximum height for the image */
+    outline: 2px solid transparent; /* Start with a transparent outline */
+    outline-offset: 2px; /* Offset to prevent overlap with the image */
+    transition: transform 0.3s ease, box-shadow 0.5s ease, outline 0.5s ease; /* Increased duration for box-shadow and outline */
+}
+
+/* Add glowing outline on hover */
+.about-image img:hover {
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.8), 0 0 20px rgba(64, 255, 230, 8); /* Glowing effect */
+    outline: 2px solid rgba(255, 255, 255, 0.8); /* Thin glowing outline */
+}
+
+.contact-links img {
+    width: 30px; /* Adjust size as needed */
+    margin: 0 10px; /* Space between icons */
+    vertical-align: middle; /* Align icons vertically */
+}
 
 /* Project Showcase Styles */
 #projects {
-    position: relative; /* Position relative for stacking context */
-    z-index: 5; /* Ensure it appears above other elements */
-    width: 100%; /* Full width */
-    min-height: 80vh; /* Set a minimum height for the section */
-    padding-top: 2rem; /* Space above the section */
-    display: flex; /* Use flexbox for layout */
-    flex-direction: column; /* Stack items vertically */
-    align-items: center; /* Center align items */
-    justify-content: flex-start; /* Align items to the start */
-    gap: 7rem; /* Space between project items */
-    margin: 0 auto; /* Center the section horizontally */
-    max-width: 85%; /* Set a maximum width for the section */
+    position: relative;
+    z-index: 5;
+    width: 100%;
+    padding-top: 4rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 1rem;
+    margin: 8rem auto 0 auto; /* Increase this margin-top to push the whole section lower */
+    max-width: 85%;
+    background: linear-gradient(180deg, #001F3F, #0A0A0A); /* Updated project section background */
+    padding: 43px;
+    border-radius: 410px;
 }
 
+/* Add a pseudo-element for the wider background */
+#projects::before {
+    content: '';
+    position: absolute;
+    top: 230px; /* Adjusted to position below the Project Showcase text */
+    left: -15px; /* Extend background to the left */
+    right: -15px; /* Extend background to the right */
+    bottom: 0;
+    background: inherit; /* Use the same background */
+    z-index: -1; /* Place behind the content */
+    border-radius: 15px; /* Match the border radius */
+}
+
+#projecth2 {
+    display: flex; /* Added to match header styling */
+    justify-content: center; /* Center the heading */
+    align-items: center; /* Center vertically */
+    margin-top: 10rem; /* Adjusted margin for spacing */
+    margin-bottom: 0; /* Remove negative margin */
+    color: #FFFFFF; /* Updated text color to white */
+    background: linear-gradient(135deg, #001F3F, #FF4136); /* Updated heading background */
+    padding: 20px; /* Added padding for better spacing */
+    border-radius: 8px; /* Rounded corners for consistency */
+}
 
 /* Project Content Styles */
 .project-content {
@@ -87,7 +158,6 @@ nav ul li a:hover {
     margin: 20px 0; /* Add margin for spacing */
 }
 
-
 .project-image {
     flex: 1; /* Allow image to take up space */
     margin-right: 20px; /* Space between image and text */
@@ -97,24 +167,27 @@ nav ul li a:hover {
     flex: 2; /* Allow text to take up more space */
 }
 
-
 /* Project Styles */
 .project {
     display: flex;
     flex-direction: column; /* Stack image and text vertically */
     align-items: center; /* Center align items */
-    background: #FBE9D0; /* New project background */
+    background: linear-gradient(to top left, #FFB3B3, #001F3F); /* Diagonal gradient with transparency for blur effect */
+    background-size: 300% 300%; /* Double the size of the background for slide effect */
+    background-position: right bottom; /* Start position for the gradient */
     margin: 20px 0; /* Adjust margin for spacing */
     border-radius: 8px; /* Rounded corners */
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5); /* Softer shadow */
     width: 100%; /* Full width for project items */
     opacity: 1; /* Always visible */
-    transition: transform 0.3s ease; /* Smooth transition for scaling */
+    transition: transform 0.3s ease, background-position 0.5s ease; /* Added transition for background */
+    overflow: hidden; /* Hide overflow */
 }
 
-
 .project:hover {
-    transform: scale(1.02); /* Increased scale on hover */
+    transform: scale(1.05); /* Increased scale on hover */
+    background-position: left top; /* Move background to the left on hover */
+    color: #FFB3B3; /* Updated hover text color to light red */
 }
 
 .project img {
@@ -122,23 +195,40 @@ nav ul li a:hover {
     border-radius: 8px;
 }
 
+/* CONTACT CSS */
+#contact {
+    background: linear-gradient(135deg, #001F3F, #FF4136); /* Updated background to use palette colors */
+    color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    margin: 20px 0;
+    justify-content: center;
+    text-align: center; /* Center all text */
+}
+
+#contact > p {
+    color: #D1D1D1; /* Updated text color for better visibility */
+    display: flex;
+    justify-content: center;
+}
+
+.contact-links a {
+    color: #FF4136; /* Updated link color to vibrant red */
+}
+
+#contact form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 footer {
     text-align: center;
     padding: 15px 0;
-    background: #FBE9D0; /* New footer background */
-    color: #333333; /* Updated footer text color */
+    background: linear-gradient(135deg, #001F3F, #FF4136); /* Updated footer background */
+    color: #FFFFFF; /* Updated footer text color */
+    margin-top: 20px; /* Added margin to separate from content above */
 }
-
-.popup {
-    position: absolute;
-    background: rgba(34, 34, 34, 0.95); /* Dark background for popup */
-    color: #e0e0e0; /* Light text for readability */
-    padding: 10px;
-    border-radius: 5px;
-    display: none; /* Hidden by default */
-    z-index: 10;
-}
-
 
 /* Media Queries for Responsiveness */
 @media (max-width: 768px) {
@@ -175,90 +265,6 @@ footer {
     }
 }
 
-#contact {
-    background: #FBE9D0; /* New contact section background */
-    padding: 20px;
-    border-radius: 8px;
-    margin: 20px 0;
-    justify-content: center;
-    text-align: center; /* Center all text */
-}
-
-#contact > p {
-    color: #e0e0e0;
-    display: flex;
-    justify-content: center;
-}
-
-#contact form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-#contact input, #contact textarea {
-    width: 80%; /* Responsive width */
-    margin: 10px 0;
-    padding: 10px;
-    border: none;
-    border-radius: 5px;
-    background: #FBE9D0; /* New input background */
-    color: #333333; /* Updated input text color */
-}
-
-#contact button {
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    background: #244855; /* New button background */
-    color: #ffffff; /* Updated button text color */
-    cursor: pointer;
-    transition: background 0.3s;
-}
-
-#contact button:hover {
-    background: #874F41; /* New button hover color */
-}
-
-
-/* New styles for About Me section */
-#about {
-    display: flex;
-    flex-direction: column; /* Stack the title and container vertically */
-    align-items: center; /* Center the title and container */
-    padding: 20px; /* Add padding for spacing on the sides */
-    background: #E64833; /* New About Me section background */
-    border-radius: 15px; /* Rounded corners for the About section */
-    margin: 40px auto; /* Center the section with auto margins */
-    max-width: 80%; /* Set a maximum width */
-    animation: slideIn 1s ease forwards; /* Apply the slide-in animation */
-}
-
-
-.about-container {
-    max-width: 945px;
-    width: 100%;
-    display: grid;
-    grid-template-columns: 1fr 2fr;
-    align-items: center;
-    margin: 20px 0;
-    gap: 10rem;
-}
-
-.about-image img {
-    max-width: auto; /* Ensure image is responsive */
-    height: auto; /* Maintain aspect ratio */
-    border-radius: 8px; /* Rounded corners for images */
-    max-height: 26rem; /* Set a maximum height for the image */
-    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for hover effects */
-}
-
-.contact-links img {
-    width: 30px; /* Adjust size as needed */
-    margin: 0 10px; /* Space between icons */
-    vertical-align: middle; /* Align icons vertically */
-}
-
 @keyframes slideIn {
     0% {
         transform: translateX(-100%);
@@ -270,3 +276,8 @@ footer {
     }
 }
 
+@keyframes gradientAnimation {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}

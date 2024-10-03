@@ -20,10 +20,10 @@ const img = document.querySelector('.about-image img');
 
     img.addEventListener('mousemove', (e) => {
         const { width, height } = img.getBoundingClientRect();
-        const x = e.clientX - img.offsetLeft - width / 2; // Corrected to use img.offsetLeft
-        const y = e.clientY - img.offsetTop - height / 2; // Corrected to use img.offsetTop
-        const tiltX = (y / height) * 20; // Increased tilt strength for more movement
-        const tiltY = -(x / width) * 20; // Increased tilt strength for more movement
+        const x = e.clientX - (img.getBoundingClientRect().left + width / 2); // Centered calculation
+        const y = e.clientY - (img.getBoundingClientRect().top + height / 2); // Centered calculation
+        const tiltX = -(y / (height / 2)) * 20; // Adjusted tilt for y-axis
+        const tiltY = (x / (width / 2)) * 20; // Tilt based on half width for more pronounced effect
         img.style.transition = 'transform 0.1s ease'; // Faster transition for tilt
         img.style.transform = `scale(1.05) rotateX(${tiltX}deg) rotateY(${tiltY}deg)`; // Apply tilt
     });
