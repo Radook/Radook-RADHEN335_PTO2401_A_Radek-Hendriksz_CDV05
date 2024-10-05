@@ -1,7 +1,7 @@
 /* Base Styles */
 html, body {
-    color: #D1D1D1; /* Updated text color for better readability */
-    background: linear-gradient(135deg, #001F3F, #FF4136, #001F3F); /* New gradient colors */
+    color: #000000; /* Ink-like text color */
+    background: linear-gradient(135deg, #f4f4f4, #000000, #e0e0e0); /* Subtle paper-like gradient */
     background-size: 200% 200%; /* For animation effect */
     animation: gradientAnimation 15s ease infinite; /* Animation for background */
     overflow-x: hidden; /* This hides the horizontal (bottom) scrollbar */
@@ -9,23 +9,23 @@ html, body {
 }
 
 body {
-    background-color: #0A0A0A; /* Updated body background to dark */
+    background-color: #ffffff; /* White background for a clean ink-and-paper look */
 }
 
 h2 {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-bottom: 0; /* Added margin to lower the heading */
-    color: #D1D1D1; /* Updated heading color */
+    margin-bottom: 0; /* Lower the heading */
+    color: #333333; /* Dark gray for ink-like look */
 }
 
 header {
-    background: linear-gradient(135deg, #001F3F, #FF4136); /* Updated header gradient */
-    color: #FFFFFF; /* Updated header text color */
-    padding: 20px; /* Added padding for better spacing */
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5); /* Softer shadow for depth */
-    border-bottom: 2px solid #FF4136; /* Updated border color */
+    background: #f0f0f0; /* Light background for header */
+    color: #000000; /* Black text for ink effect */
+    padding: 20px; /* Padding for spacing */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Softer shadow for depth */
+    border-bottom: 2px solid #333333; /* Black border for header */
     text-align: center;
 }
 
@@ -39,39 +39,37 @@ nav ul {
 nav ul li {
     display: inline;
     margin: 0 15px;
-    list-style: none; /* Remove default list styling */
 }
 
 nav ul li a {
-    color: #FF4136; /* Updated link color to vibrant red */
+    color: #000000; /* Black for link text */
     text-decoration: none; /* Remove underline */
-    padding: 10px 15px; /* Added padding for clickable area */
-    transition: color 0.3s ease; /* Smooth transition for hover effect */
+    padding: 10px 15px;
+    transition: color 0.3s ease;
 }
 
 nav ul li a:hover {
-    color: #FF6F61; /* Updated hover color to soft red */
-    text-shadow: 0 0 5px #FFB3B3; /* Glow effect color */
+    color: #777777; /* Dark gray on hover */
 }
 
-/* New styles for About Me section */
+/* About Me Section */
 #about {
     display: flex;
-    flex-direction: column; /* Stack the title and container vertically */
-    align-items: center; /* Center the title and container */
-    padding: 20px; /* Add padding for spacing on the sides */
-    background: linear-gradient(135deg, #FF4136, #001F3F); /* Update to use palette colors */
-    border-radius: 15px; /* Rounded corners for the About section */
-    margin: 40px auto; /* Center the section with auto margins */
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    background: #f4f4f4; /* Light paper-like background */
+    border-radius: 15px;
+    margin: 40px auto;
     margin-top: 8rem;
-    max-width: 80%; /* Set a maximum width */
-    animation: slideIn 1s ease forwards; /* Apply the slide-in animation */
-    margin-bottom: 18rem; /* Added bottom margin for spacing */
+    max-width: 80%;
+    animation: slideIn 1s ease forwards;
+    margin-bottom: 18rem;
 }
 
 .about-content > .p1 {
-    background-color: #0A0A0A; /* Updated to dark background */
-    padding: 15px; /* Optional: Add padding for better spacing */
+    background-color: #e0e0e0; /* Slightly darker background for contrast */
+    padding: 15px;
 }
 
 .about-container {
@@ -85,26 +83,50 @@ nav ul li a:hover {
 }
 
 .about-image img {
-    max-width: auto; /* Ensure image is responsive */
-    height: auto; /* Maintain aspect ratio */
-    border-radius: 8px; /* Rounded corners for images */
-    max-height: 26rem; /* Set a maximum height for the image */
-    outline: 2px solid transparent; /* Start with a transparent outline */
-    outline-offset: 2px; /* Offset to prevent overlap with the image */
-    transition: transform 0.3s ease, box-shadow 0.5s ease, outline 0.5s ease; /* Increased duration for box-shadow and outline */
+    max-width: auto;
+    height: auto;
+    border-radius: 8px;
+    max-height: 26rem;
+    outline: 2px solid transparent;
+    outline-offset: 2px;
+    transition: transform 0.3s ease, box-shadow 0.5s ease, outline 0.5s ease;
 }
 
-/* Add glowing outline on hover */
 .about-image img:hover {
-    box-shadow: 0 0 10px rgba(255, 255, 255, 0.8), 0 0 20px rgba(64, 255, 230, 8); /* Glowing effect */
-    outline: 2px solid rgba(255, 255, 255, 0.8); /* Thin glowing outline */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Subtle shadow for hover */
+    outline: 2px solid rgba(0, 0, 0, 0.5); /* Black outline */
 }
 
-.contact-links img {
-    width: 30px; /* Adjust size as needed */
-    margin: 0 10px; /* Space between icons */
-    vertical-align: middle; /* Align icons vertically */
+/* Contact Section */
+#contact {
+    background: #ffffff; /* White background for clean look */
+    color: #000000;
+    padding: 20px;
+    border-radius: 8px;
+    margin: 20px 0;
+    text-align: center;
 }
+
+#contact > p {
+    color: #333333;
+    display: flex;
+    justify-content: center;
+}
+
+.contact-links a {
+    color: #000000; /* Black ink-like link color */
+}
+
+.contact-links a i {
+    font-size: 24px; /* Adjust size */
+    margin: 0 10px; /* Add some spacing */
+    color: #333; /* Icon color */
+}
+
+.contact-links a:hover i {
+    color: #E64833; /* Hover effect */
+}
+
 
 /* Project Showcase Styles */
 #projects {
@@ -119,9 +141,9 @@ nav ul li a:hover {
     gap: 1rem;
     margin: 8rem auto 0 auto; /* Increase this margin-top to push the whole section lower */
     max-width: 85%;
-    background: linear-gradient(180deg, #001F3F, #0A0A0A); /* Updated project section background */
+    background: linear-gradient(#314455, #97aabd); /* Updated project section background */
     padding: 43px;
-    border-radius: 410px;
+    border-radius: 15px; /* Reverted back to smaller border radius */
 }
 
 /* Add a pseudo-element for the wider background */
@@ -143,8 +165,8 @@ nav ul li a:hover {
     align-items: center; /* Center vertically */
     margin-top: 10rem; /* Adjusted margin for spacing */
     margin-bottom: 0; /* Remove negative margin */
-    color: #FFFFFF; /* Updated text color to white */
-    background: linear-gradient(135deg, #001F3F, #FF4136); /* Updated heading background */
+    color: #000000; /* Updated text color to white */
+    background: #e0e0e0; /* Updated heading background */
     padding: 20px; /* Added padding for better spacing */
     border-radius: 8px; /* Rounded corners for consistency */
 }
@@ -172,7 +194,7 @@ nav ul li a:hover {
     display: flex;
     flex-direction: column; /* Stack image and text vertically */
     align-items: center; /* Center align items */
-    background: linear-gradient(to top left, #FFB3B3, #001F3F); /* Diagonal gradient with transparency for blur effect */
+    background: linear-gradient(to top left,#e0e0e0, #314455); /* Diagonal gradient with transparency for blur effect */
     background-size: 300% 300%; /* Double the size of the background for slide effect */
     background-position: right bottom; /* Start position for the gradient */
     margin: 20px 0; /* Adjust margin for spacing */
@@ -187,48 +209,37 @@ nav ul li a:hover {
 .project:hover {
     transform: scale(1.05); /* Increased scale on hover */
     background-position: left top; /* Move background to the left on hover */
-    color: #FFB3B3; /* Updated hover text color to light red */
+    color: #e0e0e0; /* Updated hover text color to light red */
 }
+
+.project-text a {
+    color: black; /* Default link color */
+    text-decoration: none; /* Remove underline */
+    transition: color 0.3s ease; /* Smooth color transition */
+  }
+
+  /* Hover style */
+.project-text a:hover {
+    color: #e0e0e0; /* Change this to your highlight color */
+    text-decoration: underline; /* Optional: adds underline on hover */
+  }
+
 
 .project img {
     height: 451px;
     border-radius: 8px;
 }
 
-/* CONTACT CSS */
-#contact {
-    background: linear-gradient(135deg, #001F3F, #FF4136); /* Updated background to use palette colors */
-    color: #ffffff;
-    padding: 20px;
-    border-radius: 8px;
-    margin: 20px 0;
-    justify-content: center;
-    text-align: center; /* Center all text */
-}
 
-#contact > p {
-    color: #D1D1D1; /* Updated text color for better visibility */
-    display: flex;
-    justify-content: center;
-}
-
-.contact-links a {
-    color: #FF4136; /* Updated link color to vibrant red */
-}
-
-#contact form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
+/* Footer */
 footer {
     text-align: center;
     padding: 15px 0;
-    background: linear-gradient(135deg, #001F3F, #FF4136); /* Updated footer background */
-    color: #FFFFFF; /* Updated footer text color */
-    margin-top: 20px; /* Added margin to separate from content above */
+    background: #e0e0e0; /* Light gray for footer */
+    color: #000000; /* Black ink text */
+    margin-top: 20px;
 }
+
 
 /* Media Queries for Responsiveness */
 @media (max-width: 768px) {
